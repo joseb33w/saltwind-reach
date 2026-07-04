@@ -1,0 +1,422 @@
+{
+ "mode": "chunk",
+ "title": "Saltwind Reach",
+ "grid": {
+  "cell_size": 20.0
+ },
+ "start_cell": [
+  7,
+  2
+ ],
+ "goal": {
+  "type": "reach_cell",
+  "target": [
+   12,
+   1
+  ]
+ },
+ "hero_model": "/cloud-m4bvyncum9o246jzt6zs/models/hero.glb",
+ "default_npc_model": "/cloud-m4bvyncum9o246jzt6zs/models/vendor.glb",
+ "items": {
+  "bronze_sun_key": {
+   "consumed": false
+  },
+  "sunstone_relic": {
+   "consumed": false
+  },
+  "long_bow": {
+   "consumed": false
+  },
+  "expedition_rifle": {
+   "consumed": false
+  }
+ },
+ "weapons": {
+  "machete": {
+   "name": "Machete",
+   "kind": "melee",
+   "damage": 25,
+   "rate": 1.6,
+   "model": "parametric:sword"
+  },
+  "long_bow": {
+   "name": "Long Bow",
+   "kind": "ranged",
+   "damage": 30,
+   "rate": 1.1,
+   "range": 24,
+   "projectile": {
+    "speed": 26,
+    "arc": false
+   },
+   "model": "parametric:bow"
+  },
+  "expedition_rifle": {
+   "name": "Expedition Rifle",
+   "kind": "ranged",
+   "damage": 55,
+   "rate": 0.7,
+   "range": 32,
+   "projectile": {
+    "speed": 36,
+    "arc": false
+   },
+   "model": "parametric:rifle"
+  }
+ },
+ "start_weapon": "machete",
+ "sky": {
+  "loop": true,
+  "cycle": [
+   {
+    "time": "sunrise",
+    "weather": "clear",
+    "seconds": 50
+   },
+   {
+    "time": "day",
+    "weather": "clear",
+    "seconds": 140
+   },
+   {
+    "time": "day",
+    "weather": "cloudy",
+    "seconds": 50
+   },
+   {
+    "time": "sunset",
+    "weather": "clear",
+    "seconds": 80
+   },
+   {
+    "time": "night",
+    "weather": "clear",
+    "seconds": 100
+   },
+   {
+    "time": "night",
+    "weather": "storm",
+    "seconds": 55
+   }
+  ]
+ },
+ "terrain": {
+  "amplitude": 3.6,
+  "frequency": 0.015,
+  "seed": 42,
+  "octaves": 4,
+  "material": "grass",
+  "floor": 2.6,
+  "warp": 0.0,
+  "flats": [
+   {
+    "rect": [
+     100,
+     30,
+     205,
+     140
+    ],
+    "height": 2.4,
+    "blend": 10
+   },
+   {
+    "rect": [
+     205,
+     20,
+     285,
+     140
+    ],
+    "height": 2.7,
+    "blend": 12
+   },
+   {
+    "rect": [
+     22,
+     98,
+     58,
+     140
+    ],
+    "height": 3.2,
+    "blend": 10
+   },
+   {
+    "rect": [
+     22,
+     60,
+     50,
+     92
+    ],
+    "height": 2.9,
+    "blend": 9
+   },
+   {
+    "rect": [
+     58,
+     44,
+     92,
+     76
+    ],
+    "height": 2.8,
+    "blend": 9
+   },
+   {
+    "rect": [
+     84,
+     42,
+     114,
+     58
+    ],
+    "height": 3.4,
+    "blend": 7
+   },
+   {
+    "rect": [
+     2,
+     2,
+     40,
+     38
+    ],
+    "height": 5.4,
+    "blend": 12
+   },
+   {
+    "rect": [
+     238,
+     20,
+     262,
+     42
+    ],
+    "height": 2.7,
+    "blend": 8
+   }
+  ],
+  "river": {
+   "points": [
+    [
+     85,
+     146
+    ],
+    [
+     90,
+     118
+    ],
+    [
+     83,
+     95
+    ],
+    [
+     90,
+     70
+    ],
+    [
+     95,
+     52
+    ],
+    [
+     98,
+     40
+    ],
+    [
+     105,
+     31
+    ],
+    [
+     120,
+     24
+    ],
+    [
+     160,
+     21
+    ],
+    [
+     200,
+     17
+    ],
+    [
+     250,
+     12
+    ],
+    [
+     292,
+     8
+    ]
+   ],
+   "width": 13,
+   "depth": 6
+  }
+ },
+ "water": {
+  "level": 0.0,
+  "depth": 5,
+  "shallow": [
+   0.3,
+   0.55,
+   0.5
+  ],
+  "deep": [
+   0.05,
+   0.16,
+   0.2
+  ],
+  "wave_amp": 0.12
+ },
+ "vehicles": [
+  {
+   "pos": [
+    128,
+    46
+   ],
+   "profile": "car",
+   "model": "/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb",
+   "name": "Expedition Jeep"
+  },
+  {
+   "pos": [
+    133,
+    22
+   ],
+   "profile": "boat",
+   "model": "/cloud-m4bvyncum9o246jzt6zs/models/river_launch.glb",
+   "name": "River Launch"
+  },
+  {
+   "pos": [
+    152,
+    20.5
+   ],
+   "profile": "plane",
+   "model": "/cloud-m4bvyncum9o246jzt6zs/models/seaplane.glb",
+   "name": "Seaplane",
+   "water": true
+  },
+  {
+   "pos": [
+    74,
+    63
+   ],
+   "profile": "horse",
+   "name": "Ranch Horse"
+  },
+  {
+   "pos": [
+    12,
+    12
+   ],
+   "profile": "dragon",
+   "model": "/cloud-m4bvyncum9o246jzt6zs/models/storm_drake.glb",
+   "name": "Storm-Drake",
+   "mode": "adventure",
+   "requires": "drake_awoken"
+  },
+  {
+   "pos": [
+    250,
+    30
+   ],
+   "profile": "dragon",
+   "model": "/cloud-m4bvyncum9o246jzt6zs/models/storm_drake.glb",
+   "name": "Storm-Drake",
+   "mode": "explore"
+  }
+ ],
+ "cells": [
+ {"cell":[0,0],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}],"landmark":{"url":"props/q_unature/Rock_5.glb","pos":[-2,-3],"scale":3.5},"props":[{"url":"props/q_unature/Rock_7.glb","pos":[6.0,-2.0],"scale":2.2},{"url":"props/q_unature/Rock_2.glb","pos":[-3.0,6.0],"scale":1.8}],"chest":{"pos":[5.0,5.0],"contents":["potion"],"gold":30}},
+ {"cell":[0,1],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[0,2],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":9},{"url":"props/q_unature/PineTree_3.glb","count":4},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[0,3],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_3.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[0,4],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_3.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[0,5],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[0,6],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}],"locks":{"east":"bronze_sun_key"}},
+ {"cell":[1,0],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[1,1],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[1,2],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":9},{"url":"props/q_unature/PineTree_1.glb","count":4},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[1,3],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_3.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}],"enemies":4,"enemy_type":"bandit","enemy_model":"/cloud-m4bvyncum9o246jzt6zs/models/bandit_a.glb","chest":{"pos":[3.0,4.0],"contents":["bronze_sun_key","expedition_rifle","potion"],"gold":60},"props":[{"url":"props/vostok_realistic/ms_campfire.glb","pos":[0.0,0.0]},{"url":"props/mod_village/Prop_Cart_1_Barrels.glb","pos":[-4.0,-4.0],"rot":40},{"url":"props/kk_hex/crate_A_big.glb","pos":[4.0,-2.0]},{"url":"props/kk_hex/crate_B_small.glb","pos":[4.8,-0.8]},{"url":"props/mod_racetrack/Prop_Decorative_Hay_Pile.glb","pos":[-5.0,4.0]}],"npc":{"id":"rival","name":"Silas Vane","pos":[7.0,7.0],"model":"/cloud-m4bvyncum9o246jzt6zs/models/rival_hunter.glb","persona":"Silas Vane, a smug rival relic hunter loitering at the edge of the bandit camp, 1930s pulp villain energy. Wants the Sunstone himself, taunts the hero, pretends the bandits work for him. One oily short sentence.","lines":["Silas: The Sunstone belongs in a PRIVATE collection - mine.","Silas: These gentlemen charge a toll in blood. Do give them my regards."]}},
+ {"cell":[1,4],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}],"enemies":3,"enemy_type":"bandit","enemy_model":"/cloud-m4bvyncum9o246jzt6zs/models/bandit_b.glb","props":[{"url":"props/kk_dungeon/torch_lit.glb","pos":[0.0,5.0]},{"url":"props/mod_temple/Pillar_Large_Top.glb","pos":[-4.0,2.0]}]},
+ {"cell":[1,5],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}],"structures":[{"pos":[0,3],"footprint":[16,16],"height":10,"profile":"ziggurat","steps":5,"material":"sandstone"}],"enemies":2,"enemy_type":"guardian","enemy_model":"/cloud-m4bvyncum9o246jzt6zs/models/guardian.glb","props":[{"url":"props/kk_dungeon/torch_lit.glb","pos":[-6.0,-6.0]},{"url":"props/kk_dungeon/torch_lit.glb","pos":[6.0,-6.0]},{"url":"props/mod_temple/Pillar_Large_Arch.glb","pos":[0.0,-8.0],"rot":0}],"locks":{"south":"bronze_sun_key"}},
+ {"cell":[1,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":10,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":6,"collider":false}],"structures":[{"pos":[0,6.5],"footprint":[13,1],"height":4.5,"material":"sandstone"},{"pos":[-6.5,0],"footprint":[1,14],"height":4.5,"material":"sandstone"},{"pos":[6.5,0],"footprint":[1,14],"height":4.5,"material":"sandstone"},{"pos":[-4.2,-6.5],"footprint":[4.6,1],"height":4.5,"material":"sandstone"},{"pos":[4.2,-6.5],"footprint":[4.6,1],"height":4.5,"material":"sandstone"}],"doors":[{"pos":[-1.1,-6.5],"facing":0,"lock":"bronze_sun_key","label":"Sealed Vault Door"}],"chest":{"pos":[0,2],"contents":["sunstone_relic"],"gold":250},"enemies":3,"enemy_type":"guardian","enemy_model":"/cloud-m4bvyncum9o246jzt6zs/models/guardian.glb","props":[{"url":"props/kk_dungeon/torch_lit.glb","pos":[-5,-5]},{"url":"props/kk_dungeon/torch_lit.glb","pos":[5,-5]},{"url":"props/kk_dungeon/torch_lit.glb","pos":[-5,5]},{"url":"props/kk_dungeon/torch_lit.glb","pos":[5,5]},{"url":"props/kk_dungeon/pillar_decorated.glb","pos":[-3,0]},{"url":"props/kk_dungeon/pillar_decorated.glb","pos":[3,0]}]},
+ {"cell":[2,0],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[2,1],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_3.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[2,2],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":9},{"url":"props/q_unature/PineTree_3.glb","count":4},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}],"chest":{"pos":[2.0,-3.0],"contents":["long_bow","potion"],"gold":20},"props":[{"url":"props/mod_racetrack/Prop_Decorative_Fence_Post.glb","pos":[-4.0,2.0]},{"url":"props/kk_dungeon/torch_lit.glb","pos":[3.0,-2.0]}]},
+ {"cell":[2,3],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}],"structures":[{"pos":[3,-4],"footprint":[5,4],"floors":1,"material":"timber","cap":"gable","roof_material":"thatch"}]},
+ {"cell":[2,4],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[2,5],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[2,6],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}],"locks":{"west":"bronze_sun_key"}},
+ {"cell":[3,0],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[3,1],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[3,2],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":9},{"url":"props/q_unature/PineTree_3.glb","count":4},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}],"props":[{"url":"props/q_farmbuild/Barn.glb","pos":[-1.0,5.0],"rot":15},{"url":"props/mod_racetrack/Prop_Decorative_Hay_Pile.glb","pos":[5.0,2.0]}],"rings":[{"part":{"url":"props/mod_racetrack/Prop_Decorative_Fence_Railing.glb"},"half":[8,7],"spacing":2.4}]},
+ {"cell":[3,3],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}],"props":[{"url":"props/q_farmbuild/Silo.glb","pos":[-7.0,-4.0]},{"url":"props/mod_racetrack/Prop_Decorative_Hay_Pile.glb","pos":[2.0,-2.0]}],"npc":{"id":"ranch_hand","name":"Ranch Hand Tulio","pos":[-2.0,-6.0],"model":"/cloud-m4bvyncum9o246jzt6zs/models/ranch_hand.glb","persona":"Tulio, a weathered ranch hand at the Deepwood treeline ranch, 1930s. Loves his horses, distrusts the forest at night, will lend the ranch horse to a decent soul. Warns that the trail to the old temple runs past the bandit clearing. One or two short drawled sentences.","lines":["Tulio: Horse is saddled - she knows the jungle trails better than I do.","Tulio: Temple trail runs south past the bandit clearing. Ride fast and low."]}},
+ {"cell":[3,4],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[3,5],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[3,6],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_3.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[4,0],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_2.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[4,1],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_2.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}]},
+ {"cell":[4,2],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":9},{"url":"props/q_unature/PineTree_3.glb","count":4},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_4.glb","count":3}],"structures":[{"pos":[6,-3],"footprint":[24,6],"height":1.0,"y_off":-1.0,"ground_at":[-5.5,-3],"material":"limestone","profile":"vertical","cap":"flat"}]},
+ {"cell":[4,3],"scatter":[{"url":"props/q_unature/PineTree_1.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/BushBerries_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}],"structures":[{"pos":[-4,2],"footprint":[7,5],"floors":1,"material":"timber","cap":"gable","roof_material":"thatch"}]},
+ {"cell":[4,4],"scatter":[{"url":"props/q_unature/PineTree_4.glb","count":20},{"url":"props/q_unature/PineTree_1.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_2.glb","count":3}]},
+ {"cell":[4,5],"scatter":[{"url":"props/q_unature/PineTree_3.glb","count":20},{"url":"props/q_unature/PineTree_2.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Short.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[4,6],"scatter":[{"url":"props/q_unature/PineTree_2.glb","count":20},{"url":"props/q_unature/PineTree_4.glb","count":10},{"url":"props/q_unature/BirchTree_1.glb","count":7},{"url":"props/q_unature/Bush_1.glb","count":12,"collider":false},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":20,"collider":false},{"url":"props/q_unature/Rock_1.glb","count":3}]},
+ {"cell":[5,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}]},
+ {"cell":[5,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"structures":[{"pos":[-4.0,4.0],"footprint":[8,7],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[5,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":8}],"structures":[{"pos":[-4.5,-6],"footprint":[2.2,2.2],"height":6.5,"profile":"batter","cap":"pyramidion","material":"sandstone"},{"pos":[4.5,-6],"footprint":[2.2,2.2],"height":6.5,"profile":"batter","cap":"pyramidion","material":"sandstone"},{"pos":[-6.0,-8.0],"footprint":[7,6],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"},{"pos":[4.0,8.0],"footprint":[8,6],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/kk_city/streetlight.glb","pos":[2.0,6.0]}]},
+ {"cell":[5,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"structures":[{"pos":[4.0,-8.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[-6.0,-2.0],"footprint":[9,8],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}]},
+ {"cell":[5,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-2.0,-2.0],"footprint":[8,7],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[5,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"structures":[{"pos":[-4.0,-6.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[5,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"structures":[{"pos":[-2.0,-2.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[6,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}]},
+ {"cell":[6,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-6.0,7.0],"footprint":[8,6],"floors":2,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[2.0,8.0],"footprint":[7,6],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}],"props":[{"url":"props/fs_terrain/beach_prop_docks_straight.glb","pos":[-2.0,-5.0],"rot":90},{"url":"props/fs_terrain/beach_prop_docks_straight.glb","pos":[3.0,-5.0],"rot":90},{"url":"props/kk_city/streetlight.glb","pos":[-4.0,3.0]}]},
+ {"cell":[6,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"x","width":8}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":2,"speed":6},"structures":[{"pos":[-6.0,-6.0],"footprint":[9,8],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile","interior":{"door":"s","rooms":1},"sign_light":{"color":[1.0,0.75,0.35],"energy":2.5,"range":9}},{"pos":[4.0,6.0],"footprint":[7,6],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}],"props":[{"url":"props/kk_dungeon/table_long.glb","pos":[-6.0,-7.0]},{"url":"props/kk_hex/crate_A_big.glb","pos":[-8.5,-5.5]},{"url":"props/kk_hex/barrel.glb","pos":[-3.5,-5.5]},{"url":"props/kk_city/streetlight.glb","pos":[-14.0,4.0]}],"npc":{"id":"outfitter","name":"Odessa the Outfitter","pos":[-6.0,-10.8],"model":"/cloud-m4bvyncum9o246jzt6zs/models/outfitter.glb","persona":"Odessa, a wiry no-nonsense expedition outfitter in 1930s Porto Verde. Sells rope, khakis and good advice. Knows the Deepwood trails, warns about the bandit camp in the clearing and the guardians in the ziggurat. Speaks in one or two short practical sentences.","lines":["Odessa: Machetes are for vines, kid - bandits need a bow or better.","Odessa: There is an old long bow in a trail chest west of the bridge, if the bandits have not found it."]}},
+ {"cell":[6,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"roads":[{"dir":"ns","width":6}],"structures":[{"pos":[0.0,6.0],"footprint":[8,6],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/kk_city/streetlight.glb","pos":[-8.0,-6.0]}]},
+ {"cell":[6,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"x","width":5}],"structures":[{"pos":[-4.0,-4.0],"footprint":[9,8],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}],"props":[{"url":"props/kk_city/streetlight.glb","pos":[-10.0,-8.0]}]},
+ {"cell":[6,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"structures":[{"pos":[4.0,2.0],"footprint":[6,5],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[-6.0,-2.0],"footprint":[8,7],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[6,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"structures":[{"pos":[-2.0,-4.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[7,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}]},
+ {"cell":[7,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-2.0,7.0],"footprint":[8,6],"floors":2,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[-6.0,7.0],"footprint":[7,6],"floors":2,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/fs_terrain/beach_prop_docks_straight.glb","pos":[2.0,-5.0],"rot":90},{"url":"props/fs_terrain/beach_prop_docks_straight.glb","pos":[7.0,-5.0],"rot":90},{"url":"props/kk_city/streetlight.glb","pos":[0.0,3.0]}]},
+ {"cell":[7,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":8}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":2,"speed":6},"structures":[{"pos":[-5.0,-6.5],"footprint":[11,9],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile","interior":{"door":"n","rooms":2},"sign_light":{"color":[1.0,0.65,0.3],"energy":3.0,"range":12},"sound":"town_crowd"},{"pos":[8.0,-8.0],"footprint":[7,6],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}],"landmark":{"url":"/cloud-m4bvyncum9o246jzt6zs/models/fountain.glb","pos":[3,4]},"props":[{"url":"props/kk_restaurant/table_round_A.glb","pos":[5.0,5.0]},{"url":"props/kk_restaurant/chair_a.glb","pos":[4.0,4.0],"sit":true,"rot":140},{"url":"props/kk_restaurant/chair_b.glb","pos":[6.0,6.0],"sit":true,"rot":-40},{"url":"props/kk_dungeon/table_long.glb","pos":[-4.0,-9.0]},{"url":"props/kk_dungeon/chair.glb","pos":[-5.4,-9.0],"sit":true,"rot":90},{"url":"props/kk_dungeon/chair.glb","pos":[-2.6,-9.0],"sit":true,"rot":-90},{"url":"props/kk_city/streetlight.glb","pos":[6.0,-4.0]},{"url":"props/kk_city/bench.glb","pos":[3.0,8.0],"sit":true,"rot":180}],"npc":{"id":"keeper","name":"Keeper Bram","pos":[-4.5,-4.5],"model":"/cloud-m4bvyncum9o246jzt6zs/models/tavern_keeper.glb","sound":"town_crowd","persona":"Bram, the warm mustached keeper of the Saltwind Tavern in 1930s Porto Verde. Knows the legend of the Ziggurat of the Sun: its relic vault is sealed and the BRONZE SUN KEY is held by bandits camped in a Deepwood clearing west of the river. Taking the Sunstone is said to wake the storm-drake on the crag. Encouraging, salty, one or two short sentences.","lines":["Bram: The old ziggurat out in the Deepwood hides a sealed relic vault.","Bram: Bandits in the forest clearing hold the Bronze Sun Key - west over the bridge, follow the trail.","Bram: Bring back the Sunstone and your name goes on that plaque."]},"plaque":{"pos":[-1.5,-7.5],"facing":15,"title":"RELIC HUNTERS"},"populate":[{"set":["/cloud-m4bvyncum9o246jzt6zs/models/vendor.glb","/cloud-m4bvyncum9o246jzt6zs/models/townswoman.glb","/cloud-m4bvyncum9o246jzt6zs/models/neighbor.glb"],"count":7,"vary":true,"behaviour":"wander","radius":8,"speed":1.3}]},
+ {"cell":[7,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"structures":[{"pos":[-7.0,0.0],"footprint":[9,7],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[4.0,6.0],"footprint":[7,6],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}],"props":[{"url":"props/kk_restaurant/table_round_A.glb","pos":[0.0,-4.0],"rot":0},{"url":"props/kk_restaurant/chair_a.glb","pos":[1.6,-3.0],"rot":120,"sit":true},{"url":"props/kk_restaurant/chair_a.glb","pos":[-1.6,-3.0],"rot":-100,"sit":true},{"url":"props/kk_restaurant/chair_a.glb","pos":[0.0,0.0],"rot":40,"sit":true}],"npc":{"id":"townswoman","name":"Miss Ines","pos":[-1.0,-6.0],"model":"/cloud-m4bvyncum9o246jzt6zs/models/townswoman.glb","persona":"Ines, a bright 1930s townswoman at a Porto Verde cafe. Loves the plaza fountain, the evening storms over the river and the clocktower bells. One friendly short sentence.","lines":["Ines: Take a seat - the sunset over the quay is worth the wait.","Ines: When the storm rolls in, watch the sky over the Deepwood. Some nights something WINGS through it."]}},
+ {"cell":[7,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-4.0,-2.0],"footprint":[10,8],"floors":2,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/kk_city/streetlight.glb","pos":[2.0,-6.0]}]},
+ {"cell":[7,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"structures":[{"pos":[-4.0,-2.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[7,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"structures":[{"pos":[-2.0,-2.0],"footprint":[8,6],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}]},
+ {"cell":[8,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}]},
+ {"cell":[8,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-4.0,6.0],"footprint":[8,6],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"},{"pos":[6.0,8.0],"footprint":[7,6],"floors":3,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}]},
+ {"cell":[8,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"x","width":8}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":2,"speed":6},"structures":[{"pos":[4,-5],"footprint":[8,8],"floors":5,"floor_height":3.4,"material":"brick","cap":"spire","facade":"windows","clock":true,"interior":{"door":"w","rooms":0},"sign_light":{"color":[1.0,0.85,0.5],"energy":2.5,"range":14}},{"pos":[-8.0,-6.0],"footprint":[6,5],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/kk_city/bench.glb","pos":[-6.0,6.0],"sit":true},{"url":"props/kk_city/streetlight.glb","pos":[6.0,-5.0]}]},
+ {"cell":[8,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"roads":[{"dir":"ns","width":6}],"props":[{"url":"props/mod_village/Canopy_Full.glb","pos":[4.0,-4.0],"rot":90},{"url":"props/mod_village/Canopy_Full.glb","pos":[4.0,4.0],"rot":90},{"url":"props/mod_village/Prop_Cart_1_Barrels.glb","pos":[-3.0,1.0]},{"url":"props/kk_hex/crate_A_big.glb","pos":[4.5,-2.0]},{"url":"props/mod_village/Prop_Barrel_1.glb","pos":[3.5,6.0]}],"structures":[{"pos":[9.0,8.0],"footprint":[8,7],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}]},
+ {"cell":[8,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"x","width":5}],"structures":[{"pos":[2.0,-4.0],"footprint":[8,7],"floors":2,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}]},
+ {"cell":[8,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"structures":[{"pos":[8.0,0.0],"footprint":[6,5],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[-2.0,-4.0],"footprint":[8,7],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[8,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_2.glb","count":3,"collider":false}],"structures":[{"pos":[-2.0,-4.0],"footprint":[7,6],"floors":1,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[9,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}]},
+ {"cell":[9,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-2.0,7.0],"footprint":[8,6],"floors":2,"material":"brick","cap":"gable","facade":"windows","roof_material":"roof_tile"},{"pos":[4.0,6.0],"footprint":[7,6],"floors":2,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}],"props":[{"url":"props/kk_city/bench.glb","pos":[-4.0,3.0],"sit":true}]},
+ {"cell":[9,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":8}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":2,"speed":6},"structures":[{"pos":[-6.0,-6.0],"footprint":[8,6],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"},{"pos":[4.0,6.0],"footprint":[7,6],"floors":3,"material":"stucco","cap":"flat","facade":"windows","roof_material":"stucco"}]},
+ {"cell":[9,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"props":[{"url":"props/mod_village/Canopy_Full.glb","pos":[-7.0,0.0],"rot":90},{"url":"props/kk_hex/crate_B_big.glb","pos":[-5.5,2.0]},{"url":"props/kk_city/streetlight.glb","pos":[-3.0,-4.0]}],"npc":{"id":"vendor","name":"Marco the Vendor","pos":[-8.0,-2.0],"model":"/cloud-m4bvyncum9o246jzt6zs/models/vendor.glb","sound":"town_crowd","persona":"Marco, a cheerful 1930s market vendor on Porto Verde's market street. Sells mangoes and river fish, gossips about the rival relic hunter sniffing around the bandit camp. One short sunny sentence.","lines":["Marco: Fresh mangoes! Sweeter than the sea wind!","Marco: That slick relic hunter came through asking about the ziggurat. Trouble, that one."]},"populate":[{"set":["/cloud-m4bvyncum9o246jzt6zs/models/townswoman.glb","/cloud-m4bvyncum9o246jzt6zs/models/vendor.glb"],"count":6,"vary":true,"behaviour":"wander","radius":7,"speed":1.2}],"structures":[{"pos":[2.0,-6.0],"footprint":[9,7],"floors":3,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}]},
+ {"cell":[9,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[0.0,-2.0],"footprint":[9,8],"floors":3,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}],"props":[{"url":"props/kk_city/streetlight.glb","pos":[-4.0,-8.0]}]},
+ {"cell":[9,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":3,"collider":false}],"structures":[{"pos":[0.0,-6.0],"footprint":[7,6],"floors":2,"material":"brick","cap":"flat","facade":"windows","roof_material":"brick"}]},
+ {"cell":[9,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":8,"collider":false},{"url":"props/q_unature/Bush_1.glb","count":3,"collider":false}],"structures":[{"pos":[0.0,-2.0],"footprint":[7,6],"floors":1,"material":"stucco","cap":"gable","facade":"windows","roof_material":"roof_tile"}]},
+ {"cell":[10,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}]},
+ {"cell":[10,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}],"structures":[{"pos":[0.0,0.0],"footprint":[8,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0}]},
+ {"cell":[10,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":6}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":1,"speed":3.5},"structures":[{"pos":[4.0,6.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":4}]},
+ {"cell":[10,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-6.0,-4.0],"footprint":[8,7],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":10},{"pos":[4.0,4.0],"footprint":[8,6],"floors":2,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-5}]},
+ {"cell":[10,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,-2.0],"footprint":[8,7],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":5},{"pos":[6.0,4.0],"footprint":[6,5],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0}]},
+ {"cell":[10,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"structures":[{"pos":[-4.0,2.0],"footprint":[6,5],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":8}]},
+ {"cell":[10,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}]},
+ {"cell":[11,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}]},
+ {"cell":[11,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}],"roads":[{"dir":"ns","width":5}]},
+ {"cell":[11,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"roads":[{"dir":"x","width":6}]},
+ {"cell":[11,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"roads":[{"dir":"x","width":5}],"structures":[{"pos":[-6.0,-6.0],"footprint":[9,7],"floors":2,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0,"interior":{"door":"s","rooms":1}},{"pos":[6.0,4.0],"footprint":[8,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":8}],"rings":[{"part":{"url":"props/q_unature/Bush_2.glb","collider":"none"},"half":[7,6],"spacing":1.6}],"props":[{"url":"/cloud-m4bvyncum9o246jzt6zs/models/bicycle.glb","pos":[-3.0,-1.5],"rot":70},{"url":"props/kk_platformer/ball_red.glb","pos":[0.0,-4.0]},{"url":"props/kk_city/streetlight.glb","pos":[2.0,0.0]},{"url":"props/mod_house/Prop_Living_Room_Modular_Couch_Center.glb","pos":[-8.0,-5.0],"rot":90,"sit":true},{"url":"props/mod_house/Prop_Living_Room_Coffee_Table.glb","pos":[-6.5,-5.0]},{"url":"props/mod_house/Prop_Misc_Rug_Rectangle.glb","pos":[-6.5,-5.2],"collider":"none"},{"url":"props/mod_house/Prop_Misc_Lamp.glb","pos":[-3.4,-7.5]},{"url":"props/mod_house/Prop_Bedroom_Bed_Queen.glb","pos":[-8.0,-7.0],"y":3.0,"rot":180},{"url":"props/mod_house/Prop_Bedroom_Bed_Single.glb","pos":[-4.0,-7.0],"y":3.0}],"npc":{"id":"neighbor","name":"Mr. Aldous","pos":[-2.0,-8.5],"model":"/cloud-m4bvyncum9o246jzt6zs/models/neighbor.glb","persona":"Aldous, a kindly retired suburban neighbor on Hibiscus Lane, 1930s cardigan and slippers. Swears he hears great WINGS over the rooftops at night and saw a feathered serpent silhouette against the moon. Nobody believes him. One eager short sentence.","lines":["Aldous: You hear it too some nights, yes? Wings. BIG wings.","Aldous: They laugh, but I saw it against the moon - feathers, long as a bus!"]}},
+ {"cell":[11,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,0.0],"footprint":[9,7],"floors":2,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0,"interior":{"door":"n","rooms":1}}],"rings":[{"part":{"url":"props/q_unature/Bush_2.glb","collider":"none"},"half":[7,6],"spacing":1.6}],"props":[{"url":"props/kk_platformer/ball_yellow.glb","pos":[-5.0,-4.0]},{"url":"props/mod_house/Prop_Living_Room_Modular_Couch_Center.glb","pos":[-4.0,1.0],"rot":90,"sit":true},{"url":"props/mod_house/Prop_Living_Room_Coffee_Table.glb","pos":[-2.5,1.0]},{"url":"props/mod_house/Prop_Misc_Rug_Rectangle.glb","pos":[-2.5,0.8],"collider":"none"},{"url":"props/mod_house/Prop_Misc_Lamp.glb","pos":[0.6,-1.5]},{"url":"props/mod_house/Prop_Bedroom_Bed_Queen.glb","pos":[-4.0,-1.0],"y":3.0,"rot":180},{"url":"props/mod_house/Prop_Bedroom_Bed_Single.glb","pos":[0.0,-1.0],"y":3.0}]},
+ {"cell":[11,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"structures":[{"pos":[-4.0,-2.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-4}]},
+ {"cell":[11,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,-2.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0}]},
+ {"cell":[12,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}]},
+ {"cell":[12,1],"scatter":[{"url":"props/q_unature/BirchTree_2.glb","count":8},{"url":"props/mega_nature/Grass_Common_Tall.glb","count":24,"collider":false},{"url":"props/q_unature/BushBerries_1.glb","count":8,"collider":false}],"props":[{"url":"props/kk_city/bench.glb","pos":[-4.0,-2.0],"sit":true,"rot":30},{"url":"props/kk_city/bench.glb","pos":[4.0,4.0],"sit":true,"rot":-120},{"url":"props/kk_city/streetlight.glb","pos":[-6.0,6.0]}]},
+ {"cell":[12,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":6}],"traffic":{"set":["/cloud-m4bvyncum9o246jzt6zs/models/jeep.glb"],"count":1,"speed":3.5},"structures":[{"pos":[2.0,-6.0],"footprint":[8,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":6}]},
+ {"cell":[12,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-6.0,-4.0],"footprint":[8,7],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-12},{"pos":[4.0,4.0],"footprint":[8,6],"floors":2,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":4}],"rings":[{"part":{"url":"props/q_unature/Bush_2.glb","collider":"none"},"half":[8,6],"spacing":1.6}],"props":[{"url":"/cloud-m4bvyncum9o246jzt6zs/models/bicycle.glb","pos":[-1.0,-1.0],"rot":-30},{"url":"props/kk_platformer/ball_blue.glb","pos":[2.0,0.0]}],"npc":{"id":"porch_sitter","name":"Granny Vesper","pos":[-5.0,-7.0],"model":"/cloud-m4bvyncum9o246jzt6zs/models/porch_sitter.glb","persona":"Granny Vesper, an elderly porch-sitter in the quiet suburbs, shawl and lemonade, 1930s. Remembers when the whole reach was forest and the temple drums on hot nights. One warm rambling short sentence.","lines":["Granny: Sit a while, child - the storm tonight will be a proper one.","Granny: All this was Deepwood once. The forest remembers, even if the town forgets."]},"populate":[{"set":["/cloud-m4bvyncum9o246jzt6zs/models/neighbor.glb","/cloud-m4bvyncum9o246jzt6zs/models/townswoman.glb"],"count":3,"vary":true,"behaviour":"wander","radius":6,"speed":1.0}]},
+ {"cell":[12,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,-2.0],"footprint":[8,7],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-8},{"pos":[6.0,2.0],"footprint":[6,5],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":10}]},
+ {"cell":[12,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,0.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":6}]},
+ {"cell":[12,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"structures":[{"pos":[0.0,-4.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-8}]},
+ {"cell":[13,0],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}]},
+ {"cell":[13,1],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/BushBerries_1.glb","count":5,"collider":false}],"structures":[{"pos":[2.0,2.0],"footprint":[8,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-4}]},
+ {"cell":[13,2],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_1.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":6}],"structures":[{"pos":[-4.0,-6.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-5}]},
+ {"cell":[13,3],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}],"roads":[{"dir":"ew","width":5}],"structures":[{"pos":[-6.0,-6.0],"footprint":[8,7],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0},{"pos":[4.0,2.0],"footprint":[8,6],"floors":2,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":-6}]},
+ {"cell":[13,4],"scatter":[{"url":"props/mega_nature/Grass_Common_Short.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,0.0],"footprint":[8,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":3}]},
+ {"cell":[13,5],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_1.glb","count":5,"collider":false}],"structures":[{"pos":[-2.0,-4.0],"footprint":[7,6],"floors":1,"floor_height":3.0,"material":"stucco","cap":"gable","roof_material":"roof_tile","facade":"windows","rot":0}]},
+ {"cell":[13,6],"scatter":[{"url":"props/mega_nature/Grass_Common_Tall.glb","count":14,"collider":false},{"url":"props/q_unature/BirchTree_2.glb","count":3},{"url":"props/q_unature/Bush_2.glb","count":5,"collider":false}]}
+ ]
+}
