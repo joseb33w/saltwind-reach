@@ -1,0 +1,9 @@
+/out/
+/godot
+*.tmp
+/meshy_stage/
+/verify/
+/playbooks/
+.godot/
+node_modules/
+.env

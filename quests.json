@@ -1,0 +1,137 @@
+{
+ "quests": [
+  {
+   "id": "word_at_the_tavern",
+   "name": "Word at the Tavern",
+   "steps": [
+    {
+     "objective": {
+      "type": "talk_to",
+      "target": "keeper"
+     },
+     "desc": "Ask Keeper Bram about the sealed relic vault",
+     "nav": [
+      146,
+      46
+     ]
+    }
+   ],
+   "rewards": {
+    "xp": 40
+   },
+   "on_complete_flags": [
+    "heard_rumor"
+   ]
+  },
+  {
+   "id": "the_bronze_sun_key",
+   "name": "The Bronze Sun Key",
+   "prereq": {
+    "flags": [
+     "heard_rumor"
+    ]
+   },
+   "steps": [
+    {
+     "objective": {
+      "type": "kill_count",
+      "target": "bandit",
+      "count": 4
+     },
+     "desc": "Drive the bandits from their forest camp",
+     "nav": [
+      30,
+      70
+     ]
+    },
+    {
+     "objective": {
+      "type": "collect",
+      "target": "bronze_sun_key"
+     },
+     "desc": "Take the Bronze Sun Key from the camp chest",
+     "nav": [
+      33,
+      74
+     ]
+    }
+   ],
+   "rewards": {
+    "xp": 120,
+    "gold": 50
+   },
+   "on_complete_flags": [
+    "key_found"
+   ]
+  },
+  {
+   "id": "the_sunstone_vault",
+   "name": "The Sunstone Vault",
+   "prereq": {
+    "flags": [
+     "key_found"
+    ]
+   },
+   "steps": [
+    {
+     "objective": {
+      "type": "reach_area",
+      "target": "c1_5"
+     },
+     "desc": "Follow the trail to the Ziggurat of the Sun",
+     "nav": [
+      30,
+      113
+     ]
+    },
+    {
+     "objective": {
+      "type": "collect",
+      "target": "sunstone_relic"
+     },
+     "desc": "Unseal the vault and take the Sunstone Relic",
+     "nav": [
+      30,
+      132
+     ]
+    }
+   ],
+   "rewards": {
+    "xp": 250,
+    "gold": 150
+   },
+   "on_complete_flags": [
+    "drake_awoken"
+   ]
+  },
+  {
+   "id": "ride_the_storm",
+   "name": "Ride the Storm Home",
+   "prereq": {
+    "flags": [
+     "drake_awoken"
+    ]
+   },
+   "steps": [
+    {
+     "objective": {
+      "type": "reach_area",
+      "target": "c12_1"
+     },
+     "desc": "Fly the storm-drake from the crag to Marlin Park",
+     "nav": [
+      250,
+      30
+     ]
+    }
+   ],
+   "rewards": {
+    "xp": 400,
+    "gold": 250
+   },
+   "on_complete_flags": [
+    "adventure_complete"
+   ]
+  }
+ ]
+}
