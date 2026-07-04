@@ -133,11 +133,14 @@ func _physics_process(delta: float) -> void:
 				_play(c_idle)
 			return
 
-	# attack when in range, INDEPENDENT of movement (so they don't stop and pile up)
+	# attack when in range, INDEPENDENT of movement (so they don't stop and pile up).
+	# Damage routes through MAIN (the player body is a plain CharacterBody3D with no script).
 	if dist <= attack_range and atk_cd <= 0.0:
 		atk_cd = 1.3
 		_play(c_attack, false)
-		if player.has_method("take_damage"):
+		if is_instance_valid(world) and world.has_method("take_damage"):
+			world.take_damage(9.0)
+		elif player.has_method("take_damage"):
 			player.call("take_damage", 9.0)
 
 	# ALWAYS seek a DISTINCT slot around the player -> enemies encircle, not bunch
