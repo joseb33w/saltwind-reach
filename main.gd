@@ -47,7 +47,7 @@ var player: CharacterBody3D
 var cam: Camera3D
 var cam_rig: Node3D
 var cam_spring: SpringArm3D
-var cam_yaw := 0.0
+var cam_yaw := 0.9   # opening angle: camera SE of the spawn, framing the fountain + plaza (not the tavern eave)
 var cam_pitch := -0.55
 var look_idx := -1
 var look_last := Vector2.ZERO
@@ -215,6 +215,10 @@ func _ready() -> void:
 
 	_update_stats()
 	_boot()
+	# a headless world-test harness can ride the REAL boot (dev tool; the file is not shipped)
+	if OS.get_cmdline_user_args().has("--worldtest") and ResourceLoader.exists("res://_test_world.gd"):
+		var tk = load("res://_test_world.gd").new()
+		add_child(tk)
 	# settle the web canvas size race, then lay the HUD out against the REAL viewport
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -232,16 +236,21 @@ func _boot() -> void:
 		_parse_manifest(mr[3])
 	builder.props_pool = props_pool
 
-	# world.json (required) — a loose file served next to index.html
-	var wq := HTTPRequest.new()
-	add_child(wq)
-	wq.request(world_url)
-	var wr = await wq.request_completed
-	wq.queue_free()
-	if wr[1] != 200:
-		stats.text = "world.json fetch failed (HTTP %s) @ %s" % [str(wr[1]), world_url]
-		return
-	var raw := (wr[3] as PackedByteArray).get_string_from_utf8()
+	# world.json (required) — a loose file served next to index.html on web;
+	# read straight from the project dir on desktop/headless (offline dev + tests)
+	var raw := ""
+	if not OS.has_feature("web") and FileAccess.file_exists("res://world.json"):
+		raw = FileAccess.get_file_as_string("res://world.json")
+	else:
+		var wq := HTTPRequest.new()
+		add_child(wq)
+		wq.request(world_url)
+		var wr = await wq.request_completed
+		wq.queue_free()
+		if wr[1] != 200:
+			stats.text = "world.json fetch failed (HTTP %s) @ %s" % [str(wr[1]), world_url]
+			return
+		raw = (wr[3] as PackedByteArray).get_string_from_utf8()
 	var world = JSON.parse_string(raw)
 	if not (world is Dictionary):
 		stats.text = "world.json parse error"
@@ -252,13 +261,19 @@ func _boot() -> void:
 	rpg.load_weapons(world.get("weapons", {}))   # Wave 4: world "weapons" merge over inline ITEMS
 
 	# quests.json (fetched alongside world.json — the same data qgcheck validates)
-	var qq := HTTPRequest.new()
-	add_child(qq)
-	qq.request(world_url.replace("world.json", "quests.json"))
-	var qr = await qq.request_completed
-	qq.queue_free()
-	if qr[1] == 200:
-		var qdata = JSON.parse_string((qr[3] as PackedByteArray).get_string_from_utf8())
+	var qraw := ""
+	if not OS.has_feature("web") and FileAccess.file_exists("res://quests.json"):
+		qraw = FileAccess.get_file_as_string("res://quests.json")
+	else:
+		var qq := HTTPRequest.new()
+		add_child(qq)
+		qq.request(world_url.replace("world.json", "quests.json"))
+		var qr = await qq.request_completed
+		qq.queue_free()
+		if qr[1] == 200:
+			qraw = (qr[3] as PackedByteArray).get_string_from_utf8()
+	if qraw != "":
+		var qdata = JSON.parse_string(qraw)
 		if qdata is Dictionary:
 			quests_data = qdata
 			quest.load_quests(qdata)
@@ -363,6 +378,12 @@ func _chunk_physics(delta: float) -> void:
 		var look := player.global_position - dir
 		player.look_at(Vector3(look.x, player.global_position.y, look.z), Vector3.UP)
 	player.move_and_slide()
+	# ANALYTIC floor clamp: the trimesh collider only exists once a cell has BUILT, so
+	# gravity must never drop the player through a still-streaming cell (boot especially).
+	if chunk_manager != null and chunk_manager.terrain != null:
+		var gy: float = chunk_manager.terrain.height(player.global_position.x, player.global_position.z)
+		if player.global_position.y < gy + 0.02:
+			player.global_position.y = gy + 0.02
 
 
 func _process(delta: float) -> void:
@@ -395,7 +416,7 @@ func _process(delta: float) -> void:
 func _update_stats() -> void:
 	_refresh_stats()
 	if hp_bar and rpg:
-		hp_bar.size.x = 320.0 * clamp(rpg.hp / rpg.max_hp, 0.0, 1.0)
+		hp_bar.size.x = 240.0 * clamp(rpg.hp / rpg.max_hp, 0.0, 1.0)
 
 
 func _refresh_stats() -> void:
@@ -408,11 +429,10 @@ func _refresh_stats() -> void:
 			if is_instance_valid(e) and not e.dead:
 				alive += 1
 	var area: String = String(streamer.current_id) if streamer != null else ""
-	var obj := quest.current_objective() if quest else ""
-	stats.text = "Lv %d  HP %d/%d  XP %d/%d  Gold %d  Wpn:%s\nArea:%s  enemies %d  fps %d\nInv: %s\n%s" % [
+	stats.text = "Lv %d  HP %d/%d  XP %d/%d  Gold %d\n%s   %s\nInv: %s" % [
 		rpg.level, int(rpg.hp), int(rpg.max_hp), rpg.xp, rpg.xp_next, rpg.gold,
-		rpg.item_name(rpg.equipped_weapon), area, alive, Engine.get_frames_per_second(),
-		rpg.inventory_summary(), obj]
+		rpg.item_name(rpg.equipped_weapon), String(POI.get(area, "")),
+		rpg.inventory_summary()]
 
 
 # ---------------- combat / hooks ----------------
@@ -1007,7 +1027,7 @@ func _build_hud() -> void:
 	add_child(hud_layer)
 	stats = Label.new()
 	stats.position = Vector2(12, 12)
-	stats.add_theme_font_size_override("font_size", 22)
+	stats.add_theme_font_size_override("font_size", 18)
 	stats.add_theme_color_override("font_color", Color(0.9, 1.0, 0.9))
 	hud_layer.add_child(stats)
 	var bg := ColorRect.new()
@@ -1067,9 +1087,11 @@ func _relayout_ui() -> void:
 	if stats != null:
 		stats.position = Vector2(ml, top)
 	if hp_bg != null:
-		hp_bg.position = Vector2(ml, top + 108.0)
+		hp_bg.position = Vector2(ml, top + 78.0)
+		hp_bg.size = Vector2(240.0, 14.0)
 	if hp_bar != null:
-		hp_bar.position = Vector2(ml, top + 108.0)
+		hp_bar.position = Vector2(ml, top + 78.0)
+		hp_bar.size.y = 14.0
 	if _btn_attack != null:
 		_btn_attack.position = Vector2(vp.x - bw - m, vp.y - bh - bot)
 		_btn_attack.size = Vector2(bw, bh)
@@ -1080,7 +1102,7 @@ func _relayout_ui() -> void:
 		_btn_potion.position = Vector2(vp.x - bw * 2.0 - m - 12.0, vp.y - bh - bot)
 		_btn_potion.size = Vector2(bw * 0.9, bh)
 	if nav_root != null:
-		nav_root.position = Vector2(vp.x * 0.5, top + 84.0)
+		nav_root.position = Vector2(vp.x * 0.5, top + 128.0)
 	if toast_label != null:
 		toast_label.position = Vector2(vp.x * 0.5 - 300.0, vp.y * 0.30)
 		toast_label.size = Vector2(600.0, 60.0)
@@ -1110,7 +1132,14 @@ func _setup_avatar() -> void:
 	if hm == "":
 		return
 	var u := _norm(hm)
-	await builder._ensure([u])
+	# retry the fetch a few times: a transient miss here would strand the whole session
+	# on the placeholder capsule (the hero IS the game's face)
+	for attempt in 3:
+		await builder._ensure([u])
+		if builder.cache.has(u) and builder.cache[u] != null:
+			break
+		builder.cache.erase(u)
+		await get_tree().create_timer(2.0).timeout
 	if not (builder.cache.has(u) and builder.cache[u] != null):
 		return
 	avatar = (builder.cache[u] as Node).duplicate() as Node3D
